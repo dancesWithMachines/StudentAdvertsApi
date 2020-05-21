@@ -20,6 +20,9 @@ namespace StudentAdverts
             // Trasy składnika Web API
             config.MapHttpAttributeRoutes();
 
+            //config.EnableCors();
+
+
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "adverts/{action}/{id}",

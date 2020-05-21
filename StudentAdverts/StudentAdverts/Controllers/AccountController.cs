@@ -16,6 +16,7 @@ using Microsoft.Owin.Security.OAuth;
 using StudentAdverts.Models;
 using StudentAdverts.Providers;
 using StudentAdverts.Results;
+using System.Web.Http.Cors;
 
 namespace StudentAdverts.Controllers
 {

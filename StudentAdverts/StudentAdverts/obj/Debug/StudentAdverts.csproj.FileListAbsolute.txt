@@ -129,3 +129,9 @@ C:\Users\Timax\Documents\GitHub\RestApi\StudentAdverts\StudentAdverts\obj\Debug\
 C:\Users\Timax\Documents\GitHub\RestApi\StudentAdverts\StudentAdverts\obj\Debug\StudentAdverts.csproj.CopyComplete
 C:\Users\Timax\Documents\GitHub\RestApi\StudentAdverts\StudentAdverts\obj\Debug\StudentAdverts.dll
 C:\Users\Timax\Documents\GitHub\RestApi\StudentAdverts\StudentAdverts\obj\Debug\StudentAdverts.pdb
+C:\Users\Timax\Documents\GitHub\RestApi\StudentAdverts\StudentAdverts\bin\System.Web.Cors.dll
+C:\Users\Timax\Documents\GitHub\RestApi\StudentAdverts\StudentAdverts\bin\System.Web.Http.Cors.dll
+C:\Users\Timax\Documents\GitHub\RestApi\StudentAdverts\StudentAdverts\bin\System.Web.Http.Cors.xml
+C:\Users\Timax\Documents\GitHub\RestApi\StudentAdverts\StudentAdverts\bin\Microsoft.Owin.Cors.dll
+C:\Users\Timax\Documents\GitHub\RestApi\StudentAdverts\StudentAdverts\bin\Microsoft.Owin.Cors.xml
+C:\Users\Timax\Documents\GitHub\RestApi\StudentAdverts\StudentAdverts\bin\pl\Microsoft.Owin.resources.dll

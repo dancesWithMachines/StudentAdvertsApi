@@ -10,9 +10,11 @@ using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
 using StudentAdverts.Models;
+using System.Web.Http.Cors;
 
 namespace StudentAdverts.Providers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class ApplicationOAuthProvider : OAuthAuthorizationServerProvider
     {
         private readonly string _publicClientId;

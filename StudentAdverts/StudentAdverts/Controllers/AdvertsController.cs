@@ -36,6 +36,18 @@ namespace StudentAdverts.Controllers
             return Ok(advert);
         }
 
+        [ResponseType(typeof(Advert))]
+        public IHttpActionResult GetAdvertById(int id)
+        {
+            Advert advert = db.Advert.Find(id);
+            if (advert == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(advert);
+        }
+
         [Authorize]
         [ResponseType(typeof(Advert))]
         public IHttpActionResult GetUsersAdverts()

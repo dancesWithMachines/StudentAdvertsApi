@@ -21,5 +21,6 @@ namespace StudentAdverts.Models
         public Nullable<int> phone { get; set; }
         public System.DateTime dateAndTime { get; set; }
         public string description { get; set; }
+
     }
 }

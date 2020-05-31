@@ -27,39 +27,61 @@ namespace StudentAdverts.Controllers
         [ResponseType(typeof(Advert))]
         public IHttpActionResult GetAdvert(string title)
         {
-            var advert = db.Advert.Where(a => a.title.ToUpper().Contains(title.ToUpper()));
-            if (advert == null)
+            try
             {
-                return NotFound();
-            }
+                var advert = db.Advert.Where(a => a.title.ToUpper().Contains(title.ToUpper()));
+                if (advert == null)
+                {
+                    return NotFound();
+                }
 
-            return Ok(advert);
+                return Ok(advert);
+            }
+            catch (Exception ex)
+            {
+                return responseMaker(ex);
+            }
         }
 
         [ResponseType(typeof(Advert))]
         public IHttpActionResult GetAdvertById(int id)
         {
-            Advert advert = db.Advert.Find(id);
-            if (advert == null)
+            try
             {
-                return NotFound();
+                Advert advert = db.Advert.Find(id);
+                if (advert == null)
+                {
+                    return NotFound();
+                }
+
+                return Ok(advert);
+            }
+            catch (Exception ex)
+            {
+                return responseMaker(ex);
             }
 
-            return Ok(advert);
         }
 
         [Authorize]
         [ResponseType(typeof(Advert))]
         public IHttpActionResult GetUsersAdverts()
         {
-            string userName = RequestContext.Principal.Identity.GetUserName();
-            var advert = db.Advert.Where(a => a.author == userName);
-            if (advert == null)
+            try
             {
-                return NotFound();
-            }
+                string userName = RequestContext.Principal.Identity.GetUserName();
+                var advert = db.Advert.Where(a => a.author == userName);
+                if (advert == null)
+                {
+                    return NotFound();
+                }
 
-            return Ok(advert);
+                return Ok(advert);
+            }
+            catch (Exception ex)
+            {
+                return responseMaker(ex);
+            }
         }
 
         [Authorize]
@@ -107,37 +129,53 @@ namespace StudentAdverts.Controllers
         [Authorize]
         [ResponseType(typeof(Advert))]
         public IHttpActionResult PostAdvert(Advert advert)
-        {
-            if (!ModelState.IsValid)
+        {          
+            try
             {
-                return BadRequest(ModelState);
-            }
-            advert.author = RequestContext.Principal.Identity.GetUserName();
-            db.Advert.Add(advert);
-            db.SaveChanges();
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
 
-            return CreatedAtRoute("DefaultApi", new { id = advert.id }, advert);
+                advert.author = RequestContext.Principal.Identity.GetUserName();
+                db.Advert.Add(advert);
+                db.SaveChanges();
+
+
+                return CreatedAtRoute("DefaultApi", new { id = advert.id }, advert);
+            }
+            catch (Exception ex)
+            {
+                return responseMaker(ex);
+            }
         }
 
         [Authorize]
         [ResponseType(typeof(Advert))]
         public IHttpActionResult DeleteAdvert(int id)
         {
-            Advert advert = db.Advert.Find(id);
-            if (advert == null)
+            try
             {
-                return NotFound();
+                Advert advert = db.Advert.Find(id);
+                if (advert == null)
+                {
+                    return NotFound();
+                }
+                string userName = RequestContext.Principal.Identity.GetUserName();
+                if (advert.author != userName)
+                {
+                    return Unauthorized();
+                }
+
+                db.Advert.Remove(advert);
+                db.SaveChanges();
+
+                return Ok(advert);
             }
-            string userName = RequestContext.Principal.Identity.GetUserName();
-            if (advert.author != userName)
+            catch (Exception ex)
             {
-                return Unauthorized();
+                return responseMaker(ex);
             }
-
-            db.Advert.Remove(advert);
-            db.SaveChanges();
-
-            return Ok(advert);
         }
 
         protected override void Dispose(bool disposing)
@@ -152,6 +190,15 @@ namespace StudentAdverts.Controllers
         private bool AdvertExists(int id)
         {
             return db.Advert.Count(e => e.id == id) > 0;
+        }
+
+        public IHttpActionResult responseMaker(Exception ex)
+        {
+            HttpResponseMessage responseMsg = new HttpResponseMessage(HttpStatusCode.RedirectMethod);
+            var message = string.Format(ex.HResult + " Message: " + ex.Message);
+            responseMsg.Content = new StringContent(message);
+            IHttpActionResult response = this.ResponseMessage(responseMsg);
+            return response;
         }
     }
 }

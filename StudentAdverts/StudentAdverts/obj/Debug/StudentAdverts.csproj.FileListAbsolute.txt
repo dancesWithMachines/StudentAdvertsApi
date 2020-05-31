@@ -425,3 +425,14 @@ C:\Users\Mateusz\Documents\GitHub\StudentAdvertsApi\StudentAdverts\StudentAdvert
 C:\Users\Mateusz\Documents\GitHub\StudentAdvertsApi\StudentAdverts\StudentAdverts\bin\WebDriver.Support.dll
 C:\Users\Mateusz\Documents\GitHub\StudentAdvertsApi\StudentAdverts\StudentAdverts\bin\WebDriver.xml
 C:\Users\Mateusz\Documents\GitHub\StudentAdvertsApi\StudentAdverts\StudentAdverts\bin\WebDriver.Support.xml
+C:\Users\Timax\Documents\GitHub\RestApi\StudentAdverts\StudentAdverts\bin\NUnit3.TestAdapter.dll
+C:\Users\Timax\Documents\GitHub\RestApi\StudentAdverts\StudentAdverts\bin\NUnit3.TestAdapter.pdb
+C:\Users\Timax\Documents\GitHub\RestApi\StudentAdverts\StudentAdverts\bin\nunit.engine.dll
+C:\Users\Timax\Documents\GitHub\RestApi\StudentAdverts\StudentAdverts\bin\nunit.engine.api.dll
+C:\Users\Timax\Documents\GitHub\RestApi\StudentAdverts\StudentAdverts\bin\nunit.framework.dll
+C:\Users\Timax\Documents\GitHub\RestApi\StudentAdverts\StudentAdverts\bin\WebDriver.dll
+C:\Users\Timax\Documents\GitHub\RestApi\StudentAdverts\StudentAdverts\bin\WebDriver.Support.dll
+C:\Users\Timax\Documents\GitHub\RestApi\StudentAdverts\StudentAdverts\bin\nunit.framework.pdb
+C:\Users\Timax\Documents\GitHub\RestApi\StudentAdverts\StudentAdverts\bin\nunit.framework.xml
+C:\Users\Timax\Documents\GitHub\RestApi\StudentAdverts\StudentAdverts\bin\WebDriver.xml
+C:\Users\Timax\Documents\GitHub\RestApi\StudentAdverts\StudentAdverts\bin\WebDriver.Support.xml

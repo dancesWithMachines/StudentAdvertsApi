@@ -42,7 +42,7 @@ namespace StudentAdvertsTests
         {
             driver.Navigate().GoToUrl(URL + "/register");
             var email = driver.FindElement(By.XPath("//*[@id='inputEmail']"));
-            email.SendKeys("testowyemail124@dupa.com");
+            email.SendKeys("testowyemail124@zupa.com");
             var password = driver.FindElement(By.XPath("//*[@id='inputPassword']"));
             password.SendKeys("zaq1@WSX");
             var repassword = driver.FindElement(By.XPath("//*[@id='inputConfirmPassword']"));
@@ -58,7 +58,7 @@ namespace StudentAdvertsTests
         {
             driver.Navigate().GoToUrl(URL + "/logging");
             var email = driver.FindElement(By.XPath("//*[@id='inputEmail']"));
-            email.SendKeys("testowyemail123@dupa.com");
+            email.SendKeys("testowyemail124@zupa.com");
             var password = driver.FindElement(By.XPath("//*[@id='inputPassword']"));
             password.SendKeys("zaq1@WSX");
 
@@ -73,7 +73,7 @@ namespace StudentAdvertsTests
         {
             driver.Navigate().GoToUrl(URL + "/logging");
             var email = driver.FindElement(By.XPath("//*[@id='inputEmail']"));
-            email.SendKeys("testowyemail123@dupa.com");
+            email.SendKeys("testowyemail124@zupa.com");
             var password = driver.FindElement(By.XPath("//*[@id='inputPassword']"));
             password.SendKeys("zaq1@WSX");
 
@@ -84,7 +84,7 @@ namespace StudentAdvertsTests
             var title = driver.FindElement(By.XPath("//*[@id='title']"));
             title.SendKeys("TestoweOgloszenie Selenium 2");
             var email2 = driver.FindElement(By.XPath("//*[@id='email']"));
-            email2.SendKeys("testowyemail123@dupa.com");
+            email2.SendKeys("testowyemail123@zupa.com");
             var number = driver.FindElement(By.XPath("//*[@id='phone']"));
             number.SendKeys("123456789");
             var desc = driver.FindElement(By.XPath("//*[@id='description']"));
